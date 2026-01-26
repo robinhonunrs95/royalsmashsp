@@ -120,7 +120,39 @@
   <header>
     <h1>Royal Smash SP</h1>
     <p>"O sabor que governa sua fome" 👑🔥</p>
-  </header>
+  </header>nav {
+  background: #111;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 
   <div class="container">
     <div class="info">
