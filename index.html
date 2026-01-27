@@ -4,7 +4,13 @@
   <meta charset="UTF-8" />
   <title>Royal Smash SP - Delivery Gourmet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -12,245 +18,43 @@
       color: #f5f5f5;
     }
 
+    /* HEADER */
     header {
       background: linear-gradient(90deg, #000, #8b0000);
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
+      animation: fadeDown 1s ease;
     }
 
     header h1 {
       margin: 0;
       color: gold;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
 
     header p {
-      margin: 5px 0 0;
+      margin-top: 8px;
       font-style: italic;
     }
 
-    .container {
-      padding: 20px;
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #111;
+      box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .nav-container {
       max-width: 900px;
       margin: auto;
-    }
-
-    .info {
-      background: #111;
-      padding: 15px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-    }
-
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #1a1a1a;
-      border-radius: 15px;
-      padding: 15px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.15);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card h3 {
-      color: gold;
-    }
-
-    .price {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    button {
-      background: gold;
-      border: none;
-      border-radius: 8px;
-      padding: 10px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #ffd700;
-    }
-
-    .cart {
-      background: #111;
-      padding: 15px;
-      border-radius: 12px;
-      margin-top: 30px;
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-    }
-
-    .cart h2 {
-      color: gold;
-    }
-
-    .cart-item {
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
-      margin: 5px 0;
+      align-items: center;
     }
 
-    .checkout {
-      margin-top: 15px;
-      width: 100%;
-      background: #25D366;
-      color: white;
-      font-size: 1.1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Royal Smash SP</h1>
-    <p>"O sabor que governa sua fome" 👑🔥</p>
-  </header>nav {
-  background: #111;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-
-nav a {
-  color: gold;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #ffd700;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-
-  <div class="container">
-    <div class="info">
-      <p>🚀 <strong>Delivery exclusivo</strong> - Vila Carmosina e bairros próximos (raio até 5km)</p>
-      <p>⏰ <strong>Funcionamento:</strong> Todos os dias até 00h</p>
-      <p>💳 <strong>Pagamento:</strong> Pix (telefone) | Cartão na entrega</p>
-      <p>📲 <strong>WhatsApp:</strong> (11) 94586-4623</p>
-    </div>
-
-    <h2 style="color: gold">🍔 Cardápio Gourmet</h2>
-
-    <div class="menu">
-      <div class="card">
-        <h3>Royal Smash</h3>
-        <p>Smash duplo, cheddar inglês, pão brioche, molho da coroa</p>
-        <div class="price">R$ 32,90</div>
-        <button onclick="addToCart('Royal Smash', 32.9)">Adicionar</button>
-      </div>
-
-      <div class="card">
-        <h3>King Bacon</h3>
-        <p>Carne premium, bacon caramelizado, queijo prato, maionese trufada</p>
-        <div class="price">R$ 35,90</div>
-        <button onclick="addToCart('King Bacon', 35.9)">Adicionar</button>
-      </div>
-
-      <div class="card">
-        <h3>Truffle Crown</h3>
-        <p>Blend nobre, queijo brie, cebola roxa, molho trufado</p>
-        <div class="price">R$ 38,90</div>
-        <button onclick="addToCart('Truffle Crown', 38.9)">Adicionar</button>
-      </div>
-
-      <div class="card">
-        <h3>Gold Cheddar Melt</h3>
-        <p>Smash triplo, cheddar cremoso, pão selado na manteiga</p>
-        <div class="price">R$ 41,90</div>
-        <button onclick="addToCart('Gold Cheddar Melt', 41.9)">Adicionar</button>
-      </div>
-    </div>
-
-    <div class="cart">
-      <h2>🛒 Seu Pedido</h2>
-      <div id="cart-items"></div>
-      <p><strong>Total: R$ <span id="total">0.00</span></strong></p>
-      <button class="checkout" onclick="checkout()">Finalizar Pedido no WhatsApp</button>
-    </div>
-  </div>
-
-  <footer>
-    <p>© 2026 Royal Smash SP - Delivery Gourmet | Vila Carmosina - São Paulo</p>
-  </footer>
-
-  <script>
-    const phone = '5511945864623';
-    let cart = [];
-
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      renderCart();
-    }
-
-    function renderCart() {
-      const cartDiv = document.getElementById('cart-items');
-      cartDiv.innerHTML = '';
-      let total = 0;
-
-      cart.forEach((item) => {
-        total += item.price;
-        const div = document.createElement('div');
-        div.className = 'cart-item';
-        div.innerHTML = `<span>${item.name}</span><span>R$ ${item.price.toFixed(2)}</span>`;
-        cartDiv.appendChild(div);
-      });
-
-      document.getElementById('total').innerText = total.toFixed(2);
-    }
-
-    function checkout() {
-      if (cart.length === 0) {
-        alert('Seu carrinho está vazio!');
-        return;
-      }
-
-      let message = '👑 Pedido - Royal Smash SP 👑%0A%0A';
-      let total = 0;
-
-      cart.forEach((item) => {
-        message += `• ${item.name} - R$ ${item.price.toFixed(2)}%0A`;
-        total += item.price;
-      });
-
-      message += `%0A💰 Total: R$ ${total.toFixed(2)}%0A`; 
-      message += '%0A📍 Endereço de entrega:%0A';
-      message += '%0AForma de pagamento: Pix (telefone) ou Cartão na entrega';
-
-      window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-    }
-  </script>
-</body>
-</html>
+    nav ul {
+      list-style: none;
+      display: f
