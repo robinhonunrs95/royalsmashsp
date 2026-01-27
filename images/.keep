@@ -1,3 +1,172 @@
-<img src="./images/logo.png" alt="Logo Royal Smash SP">
-<img src="./images/burger1.jpg" alt="Hambúrguer Royal Smash">
-<img src="./images/refri.jpg" alt="Refrigerante">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Smash SP | Luxo Gourmet</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: white;
+}
+
+header {
+  background: black;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid gold;
+}
+
+header img {
+  width: 90px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: gold;
+  margin: 5px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.container {
+  padding: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.card {
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(255,215,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: gold;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  background: gold;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e6c200;
+}
+
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="./images/logo.png" alt="Royal Smash SP Logo">
+  <h1>Royal Smash SP</h1>
+  <div class="subtitle">Luxo Gourmet • Vila Carmosina • Somente Delivery</div>
+  <div class="subtitle">🕛 Atendimento até 00h | 📍 Raio de 5km</div>
+</header>
+
+<div class="container">
+
+<!-- LANCHE 1 -->
+<div class="card">
+  <img src="./images/burger1.jpg" alt="Royal Smash Burger">
+  <h2>Royal Smash</h2>
+  <p>Pão brioche, smash duplo, cheddar inglês, cebola caramelizada e molho da casa.</p>
+  <div class="price">R$ 28,90</div>
+  <button onclick="pedido('Royal Smash')">Pedir no WhatsApp</button>
+</div>
+
+<!-- LANCHE 2 -->
+<div class="card">
+  <img src="./images/burger2.jpg" alt="Truffle Crown">
+  <h2>Truffle Crown</h2>
+  <p>Pão australiano, hambúrguer artesanal, queijo prato, bacon crocante e maionese trufada.</p>
+  <div class="price">R$ 32,90</div>
+  <button onclick="pedido('Truffle Crown')">Pedir no WhatsApp</button>
+</div>
+
+<!-- LANCHE 3 -->
+<div class="card">
+  <img src="./images/burger3.jpg" alt="Gold Cheddar">
+  <h2>Gold Cheddar</h2>
+  <p>Pão brioche, smash triplo, cheddar cremoso e crispy de cebola.</p>
+  <div class="price">R$ 35,90</div>
+  <button onclick="pedido('Gold Cheddar')">Pedir no WhatsApp</button>
+</div>
+
+<!-- BEBIDAS -->
+<div class="card">
+  <img src="./images/refri.jpg" alt="Refrigerante">
+  <h2>Refrigerante Lata</h2>
+  <div class="price">R$ 6,00</div>
+</div>
+
+<div class="card">
+  <img src="./images/agua.jpg" alt="Água Mineral">
+  <h2>Água Mineral</h2>
+  <div class="price">R$ 4,00</div>
+</div>
+
+<!-- ADICIONAIS -->
+<div class="card">
+  <h2>Adicionais</h2>
+  <p>🍔 Carne extra — R$ 7,00</p>
+  <p>🧀 Queijo extra — R$ 4,00</p>
+  <p>🥓 Bacon — R$ 5,00</p>
+  <p>🥫 Molhos especiais — R$ 2,00</p>
+</div>
+
+<!-- PAGAMENTO -->
+<div class="card">
+  <h2>Pagamento</h2>
+  <p>💳 Aceitamos Cartão</p>
+  <p>⚡ Pix: 11945864623</p>
+</div>
+
+</div>
+
+<footer>
+Royal Smash SP © 2026<br>
+Vila Carmosina - São Paulo | Somente Delivery
+</footer>
+
+<script>
+function pedido(lanche) {
+  const numero = "5511945864623";
+  const mensagem = `Olá! Quero pedir o lanche: ${lanche}`;
+  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
+}
+</script>
+
+</body>
+</html>
