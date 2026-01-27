@@ -1,6 +1,3 @@
-logo.png
-burger1.jpg
-burger2.jpg
-burger3.jpg
-refri.jpg
-agua.jpg
+<img src="./images/logo.png" alt="Logo Royal Smash SP">
+<img src="./images/burger1.jpg" alt="Hambúrguer Royal Smash">
+<img src="./images/refri.jpg" alt="Refrigerante">
