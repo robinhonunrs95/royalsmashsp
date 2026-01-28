@@ -13,35 +13,51 @@ body {
   color: white;
 }
 
-header {
+/* MENU */
+nav {
   background: black;
-  padding: 15px;
-  text-align: center;
   border-bottom: 2px solid gold;
 }
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+}
 
+/* HEADER */
+header {
+  text-align: center;
+  padding: 20px;
+}
 header img {
   width: 90px;
   border-radius: 50%;
-  margin-bottom: 10px;
 }
-
 h1 {
   color: gold;
-  margin: 5px 0;
+  margin: 10px 0 5px;
 }
-
 .subtitle {
   font-size: 14px;
   color: #ccc;
 }
 
+/* CONTEÚDO */
 .container {
   padding: 15px;
   max-width: 500px;
   margin: auto;
 }
-
 .card {
   background: #1a1a1a;
   border-radius: 15px;
@@ -49,19 +65,15 @@ h1 {
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(255,215,0,0.2);
 }
-
 .card img {
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 10px;
 }
-
 .price {
   color: gold;
   font-size: 18px;
   font-weight: bold;
 }
-
 button {
   width: 100%;
   background: gold;
@@ -72,11 +84,25 @@ button {
   font-weight: bold;
   cursor: pointer;
 }
-
 button:hover {
   background: #e6c200;
 }
 
+/* WHATSAPP FLUTUANTE */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   font-size: 13px;
@@ -88,25 +114,34 @@ footer {
 
 <body>
 
-<header>
-  <img src="images/logo.png" alt="Royal Smash SP Logo">
+<nav>
+  <ul>
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#cardapio">Cardápio</a></li>
+    <li><a href="#bebidas">Bebidas</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<header id="inicio">
+  <img src="images/logo.png" alt="Royal Smash SP">
   <h1>Royal Smash SP</h1>
-  <div class="subtitle">Luxo Gourmet • Vila Carmosina • Somente Delivery</div>
-  <div class="subtitle">🕛 Atendimento até 00h | 📍 Raio de 5km</div>
+  <div class="subtitle">Luxo Gourmet • Vila Carmosina</div>
+  <div class="subtitle">Somente Delivery • Atendimento até 00h</div>
 </header>
 
-<div class="container">
+<div class="container" id="cardapio">
 
 <div class="card">
-  <img src="images/burger1.jpg" alt="Royal Smash">
+  <img src="images/burger1.jpg">
   <h2>Royal Smash</h2>
-  <p>Pão brioche, smash duplo, cheddar inglês e molho da casa.</p>
+  <p>Smash duplo, cheddar inglês, cebola caramelizada e molho da casa.</p>
   <div class="price">R$ 28,90</div>
   <button onclick="pedido('Royal Smash')">Pedir no WhatsApp</button>
 </div>
 
 <div class="card">
-  <img src="images/burger2.jpg" alt="Truffle Crown">
+  <img src="images/burger2.jpg">
   <h2>Truffle Crown</h2>
   <p>Hambúrguer artesanal, bacon crocante e maionese trufada.</p>
   <div class="price">R$ 32,90</div>
@@ -114,37 +149,40 @@ footer {
 </div>
 
 <div class="card">
-  <img src="images/burger3.jpg" alt="Gold Cheddar">
+  <img src="images/burger3.jpg">
   <h2>Gold Cheddar</h2>
   <p>Smash triplo, cheddar cremoso e crispy de cebola.</p>
   <div class="price">R$ 35,90</div>
   <button onclick="pedido('Gold Cheddar')">Pedir no WhatsApp</button>
 </div>
 
-<div class="card">
-  <img src="images/refri.jpg" alt="Refrigerante">
-  <h2>Refrigerante Lata</h2>
-  <div class="price">R$ 6,00</div>
 </div>
 
-<div class="card">
-  <img src="images/agua.jpg" alt="Água">
-  <h2>Água Mineral</h2>
-  <div class="price">R$ 4,00</div>
+<div class="container" id="bebidas">
+  <div class="card">
+    <img src="images/refri.jpg">
+    <h2>Refrigerante</h2>
+    <div class="price">R$ 6,00</div>
+  </div>
+
+  <div class="card">
+    <img src="images/agua.jpg">
+    <h2>Água Mineral</h2>
+    <div class="price">R$ 4,00</div>
+  </div>
 </div>
 
-</div>
-
-<footer>
+<footer id="contato">
 Royal Smash SP © 2026<br>
 Vila Carmosina - São Paulo
 </footer>
 
+<a class="whatsapp" href="https://wa.me/5511945864623" target="_blank">💬</a>
+
 <script>
 function pedido(lanche) {
-  const numero = "5511945864623";
-  const mensagem = `Olá! Quero pedir o lanche: ${lanche}`;
-  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
+  const msg = `Olá! Quero pedir o lanche: ${lanche}`;
+  window.open(`https://wa.me/5511945864623?text=${encodeURIComponent(msg)}`);
 }
 </script>
 
